@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import BasicExample from './components/BasicExample';
 import FormDisabledInputExample from './components/FormDisabledInputExample';
@@ -9,13 +10,29 @@ import ChecksRadios from './components/ChecksRadios';
 import RangeExample from './components/RangeExample';
 import InputGroupEx from './components/InputGroup';
 import GridComplexExample from './components/GridComplexExample';
+import data from './utilities/seed';
+import columns from './utilities/columns';
+import DataTable from 'react-data-table-component';
+import { customSort, customStyles, conditionalRowStyles, resetPaginationToggle } from 'lodash'
+
+
 function App() {
+  const [selectedRows, setSelectedRows] = React.useState(false);
+	const [toggledClearRows, setToggleClearRows] = React.useState(false);
+
+	const handleChange = ({ selectedRows }) => {
+		setSelectedRows(selectedRows);
+	};
+	const handleClearRows = () => {
+		setToggleClearRows(!toggledClearRows);
+	}
+  
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-         
-        </p>
+        <h1>
+         WELCOME
+        </h1>
        <BasicExample />
        <FormDisabledInputExample />
        <TextControlsExample />
@@ -23,9 +40,28 @@ function App() {
        <FormFileExample />
        <SelectSizesExample />
        <ChecksRadios />
-       < RangeExample />
+       <RangeExample />
        <InputGroupEx />
        <GridComplexExample />
+       <button className = 'Button'onClick={handleClearRows}>
+				Clear Selected Rows
+			</button>
+			<DataTable
+      className='datatable'
+				columns={columns}
+				data={data}
+				pagination
+				selectableRows={selectedRows}
+				customStyles={customStyles}
+				conditionalRowStyles={conditionalRowStyles}
+				paginationResetDefaultPage={resetPaginationToggle} // optionally, a hook to reset pagination to page 1
+
+				theme="light"
+				onSelectedRowsChange={handleChange}
+				sortFunction={customSort}
+				clearSelectedRows={toggledClearRows}
+
+			/>
       </header>
     </div>
   );

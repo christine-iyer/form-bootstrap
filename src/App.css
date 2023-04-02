@@ -1,46 +1,48 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 :root {
   --bodyColor: "#000000";
-  --white: rgba(101,26,68,0.1);
+  --white: rgba(245, 42, 157, 0.1);
   --green: rgba(75,167,147);
   --blue: rgb(54,71,136);
   --blue-1: rgb(48,109,163);
   --turquoise: rgb(24,113,113);
   --pink:rgb(199, 164, 185);
-  --yellow:rgb(247,235,153);
-  --red: rgb(182, 91, 94);
+  --yellow:rgb(247, 241, 153);
+  --red: rgb(249, 89, 8);
   --red-1: rgb(182, 80, 100);
   --text-dark: rgb(108,64,61);
   --text-light: rgb(212,193,145);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: .5rem;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.btn {
+  color: var(--pink);
+}
+.datatable {
+  color: aqua;
+}
 
 .App-header {
-  background-color: var(--blue-1);
+  background-color: var(--yellow);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
   font-size: calc(10px + 2vmin);
-  color: rgba(75,167,147);;
+  color: var(--red);
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
@@ -49,4 +51,5 @@
   to {
     transform: rotate(360deg);
   }
+
 }

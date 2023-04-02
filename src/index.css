@@ -13,16 +13,23 @@ code {
 }
 
 :root {
-  --bodyColor: "#000000";
   --white: rgba(101,26,68,0.1);
-  --green: rgba(75,167,147);
-  --blue: rgb(54,71,136);
-  --blue-1: rgb(48,109,163);
-  --turquoise: rgb(24,113,113);
+  --green: rgba(75,167,147,.8);
+  --blue: rgba(54,71,136,.66);
+  --blue-1: rgba(48,109,173,.7);
+  --turquoise: rgba(24,113,113,.6);
   --pink:rgb(199, 164, 185);
   --yellow:rgb(247,235,153);
-  --red: rgb(182, 91, 94);
+  --red: rgba(202, 91, 94,.7);
   --red-1: rgb(182, 80, 100);
-  --text-dark: rgb(108,64,61);
+  --text-dark: rgba(108,64,61,.7);
   --text-light: rgb(212,193,145);
+  margin: 14rem;
+  padding: 13rem;
+}
+.btn {
+  color: var(--pink);
+}
+.datatable {
+  color: aqua;
 }
