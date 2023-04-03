@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import BasicExample from './components/BasicExample';
 import FormDisabledInputExample from './components/FormDisabledInputExample';
 import TextControlsExample from './components/TextControlExmple';
@@ -10,10 +11,14 @@ import ChecksRadios from './components/ChecksRadios';
 import RangeExample from './components/RangeExample';
 import InputGroupEx from './components/InputGroup';
 import GridComplexExample from './components/GridComplexExample';
-import data from './utilities/seed';
+import NewOrderPage from './pages/NewOrderPage/NewOrderPage';
+import OrderHistoryPage from './pages/OrderHistoryPage/OrderHistoryPage';
+import NavBar from './components/store-items/NavBar/NavBar';
 import columns from './utilities/columns';
 import DataTable from 'react-data-table-component';
 import { customSort, customStyles, conditionalRowStyles, resetPaginationToggle } from 'lodash'
+import { Nav } from 'react-bootstrap';
+const data = './data.js'
 
 
 function App() {
@@ -33,6 +38,10 @@ function App() {
         <h1>
          WELCOME
         </h1>
+        <NavBar />
+        <Route path="/orders/new" element={<NewOrderPage />} />
+            <Route path="/orders" element={<OrderHistoryPage  />} />
+            
        <BasicExample />
        <FormDisabledInputExample />
        <TextControlsExample />
